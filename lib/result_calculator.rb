@@ -1,8 +1,4 @@
 class ResultCalculator
-
-  # В переменной points храним баллы, полученные за ответ на заданный вопрос теста
-  attr_accessor :points
-
   def initialize
     # в этой переменной хранятся результаты прохождения теста на общительность
     @results = [
@@ -60,26 +56,24 @@ class ResultCalculator
     @points = 0
 
   end
-  def get_result_text
 
+  def get_result_text(points)
     # Метод возвращает результат прохождения теста в зависимости от заработанных баллов
-
     case
-      when @points >= 30
+      when points >= 30
       @results[0]
-     when @points >= 25
+     when points >= 25
       @results[1]
-     when @points >= 19
+     when points >= 19
       @results[2]
-     when @points >= 14
+     when points >= 14
       @results[3]
-     when @points >= 9
+     when points >= 9
       @results[4]
-     when @points >= 4
+     when points >= 4
       @results[5]
-     when @points >= 0
+     when points >= 0
       @results[6]
     end
-
   end
 end
